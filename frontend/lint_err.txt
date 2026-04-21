@@ -1,0 +1,64 @@
+
+/Users/ravendrapatel/Social-Connect/frontend/src/App.jsx
+   69:5   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  67 |       }
+  68 |     ];
+> 69 |     setProfiles(sampleProfiles);
+     |     ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  70 |   }, []);
+  71 |
+  72 |   const renderView = () => {                                                                              react-hooks/set-state-in-effect
+  112:5   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  110 |
+  111 |   useEffect(() => {
+> 112 |     setIsVisible(true);
+      |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  113 |   }, []);
+  114 |
+  115 |   return (                                                                                            react-hooks/set-state-in-effect
+  542:10  error    'isLoadingAI' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                no-unused-vars
+  584:7   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  582 |   useEffect(() => {
+  583 |     if (activeTab === 'discover' && aiRecommendations.length === 0) {
+> 584 |       getAIRecommendations();
+      |       ^^^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  585 |     }
+  586 |   }, [activeTab]);
+  587 |  react-hooks/set-state-in-effect
+  586:6   warning  React Hook useEffect has missing dependencies: 'aiRecommendations.length' and 'getAIRecommendations'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   react-hooks/exhaustive-deps
+  606:11  error    Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  604 |   const handleConnect = (profileId) => {
+  605 |     const connection = {
+> 606 |       id: Date.now(),
+      |           ^^^^^^^^^^ Cannot call impure function
+  607 |       profileId,
+  608 |       status: 'pending',
+  609 |       timestamp: new Date().toISOString()                                                                                                                                                                                                                                                                                                                                                                                        react-hooks/purity
+  614:9   error    'handleMessage' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              no-unused-vars
+
+✖ 7 problems (6 errors, 1 warning)
+
