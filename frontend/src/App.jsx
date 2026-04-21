@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
-function App() {
+// Moved Home back to App.jsx for simplicity as a component definition, or we can inline it
+const Home = () => {
   return (
     <div className="flex h-screen w-full items-center justify-center text-slate-50 relative overflow-hidden">
-      
-      {/* Background blobs for premium feel */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-violet-600/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
 
@@ -17,16 +18,26 @@ function App() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-4 bg-violet-600 hover:bg-violet-700 transition-all rounded-xl font-semibold shadow-lg shadow-violet-600/30">
+          <Link to="/login" className="px-8 py-4 bg-violet-600 hover:bg-violet-700 transition-all rounded-xl font-semibold shadow-lg shadow-violet-600/30">
             Sign In
-          </button>
-          <button className="px-8 py-4 bg-slate-800 hover:bg-slate-700 transition-all rounded-xl font-semibold border border-slate-700">
+          </Link>
+          <Link to="/signup" className="px-8 py-4 bg-slate-800 hover:bg-slate-700 transition-all rounded-xl font-semibold border border-slate-700 block mt-2 sm:mt-0">
             Create Profile
-          </button>
+          </Link>
         </div>
       </div>
     </div>
-  )
+  );
+};
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
