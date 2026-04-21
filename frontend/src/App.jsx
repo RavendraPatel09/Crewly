@@ -1027,7 +1027,7 @@ function Dashboard({ user, profiles, connections, setConnections, messages, setM
 }
 
 // Comprehensive Styles
-const styles = `
+var styles = `
   @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap');
 
   :root {
