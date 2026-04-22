@@ -1,19 +1,39 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+}
+
 :root {
-  --background: #0f172a; /* deep slate */
-  --foreground: #f8fafc; /* light slate */
-  --primary: #8b5cf6; /* violet */
-  --primary-hover: #7c3aed;
-  --secondary: #1e293b;
-  --accent: #38bdf8; /* sky blue */
+  /* Light Theme based on Social SaaS Narrative (Inverted Dark Mode) */
+  --background: #f8fafc; /* light slate background */
+  --foreground: #0f172a; /* deep slate text */
+  --surface: #ffffff;    /* pure white cards */
+  --surface-hover: #f1f5f9;
+  
+  --primary: #4f46e5;       /* Indigo */
+  --primary-hover: #4338ca;
+  --secondary: #64748b;     /* muted text / secondary elements */
+  
+  --accent: #0d9488;        /* Teal accent */
+  --accent-hover: #0f766e;
+  
+  --border: #e2e8f0;
   --error: #ef4444; 
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', 'Outfit', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
   margin: 0;
   display: flex;
   min-height: 100vh;
