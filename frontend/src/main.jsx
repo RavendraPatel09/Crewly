@@ -29,6 +29,10 @@ class ErrorBoundary extends React.Component {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <div style={{color: 'black', background: 'white', padding: 20}}>Test App</div>
-  </StrictMode>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ErrorBoundary>
+  </StrictMode>,
 )

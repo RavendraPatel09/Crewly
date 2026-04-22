@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Instagram, Sparkles, Shield, MessageCircle, User, Settings, LogOut, Star, MapPin, DollarSign, Check, X, Zap, Target, TrendingUp, Users, Send, Menu, ChevronRight } from 'lucide-react';
+import { Search, Camera, Sparkles, Shield, MessageCircle, User, Settings, LogOut, Star, MapPin, DollarSign, Check, X, Zap, Target, TrendingUp, Users, Send, Menu, ChevronRight } from 'lucide-react';
 
 // Main App Component
 export default function CreatorLinkApp() {
@@ -23,7 +23,7 @@ export default function CreatorLinkApp() {
         rate: '$50-100/hour',
         location: 'Los Angeles, CA',
         rating: 4.9,
-        bio: 'Professional video editor specializing in Instagram content. Helped 100+ creators grow their accounts.',
+        bio: 'Professional video editor specializing in Camera content. Helped 100+ creators grow their accounts.',
         portfolio: ['Fashion', 'Lifestyle', 'Travel']
       },
       {
@@ -118,7 +118,7 @@ function LandingPage({ onGetStarted }) {
       <nav className="nav">
         <div className="nav-content">
           <div className="logo">
-            <Instagram size={28} />
+            <Camera size={28} />
             <span>CreatorLink</span>
           </div>
           <button className="btn-secondary" onClick={onGetStarted}>
@@ -139,7 +139,7 @@ function LandingPage({ onGetStarted }) {
             <span className="gradient-text"> Expert Services</span>
           </h1>
           <p className="hero-subtitle">
-            The professional marketplace where Instagram creators meet verified service providers.
+            The professional marketplace where Camera creators meet verified service providers.
             Find editors, managers, strategists, and more—matched by AI to your specific needs.
           </p>
           <div className="hero-cta">
@@ -216,7 +216,7 @@ function LandingPage({ onGetStarted }) {
       {/* CTA Section */}
       <section className="cta-section">
         <div className="cta-content">
-          <h2>Ready to Grow Your Instagram Presence?</h2>
+          <h2>Ready to Grow Your Camera Presence?</h2>
           <p>Join thousands of creators and service providers already collaborating on CreatorLink</p>
           <button className="btn-primary large" onClick={onGetStarted}>
             Start Connecting Today
@@ -229,7 +229,7 @@ function LandingPage({ onGetStarted }) {
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-logo">
-            <Instagram size={24} />
+            <Camera size={24} />
             <span>CreatorLink</span>
           </div>
           <p>© 2024 CreatorLink. Empowering creators worldwide.</p>
@@ -283,7 +283,7 @@ function SignupPage({ onSignup, onBack }) {
     setIsGenerating(true);
     try {
       const prompt = userType === 'creator' 
-        ? `Generate a compelling Instagram creator bio for someone who: ${JSON.stringify(profileData)}. Keep it under 100 characters, professional yet personable.`
+        ? `Generate a compelling Camera creator bio for someone who: ${JSON.stringify(profileData)}. Keep it under 100 characters, professional yet personable.`
         : `Generate a professional service provider bio for: ${JSON.stringify(profileData)}. Highlight expertise and value proposition in under 100 characters.`;
 
       const response = await fetch("https://api.anthropic.com/v1/messages", {
@@ -323,7 +323,7 @@ function SignupPage({ onSignup, onBack }) {
 
       <div className="signup-container">
         <div className="signup-header">
-          <Instagram size={40} />
+          <Camera size={40} />
           <h1>Join CreatorLink</h1>
           <div className="progress-bar">
             <div className={`progress-step ${step >= 1 ? 'active' : ''}`}>1</div>
@@ -341,7 +341,7 @@ function SignupPage({ onSignup, onBack }) {
               <div className="type-card" onClick={() => handleTypeSelect('creator')}>
                 <User size={48} />
                 <h3>Creator</h3>
-                <p>Looking for services to grow my Instagram</p>
+                <p>Looking for services to grow my Camera</p>
                 <ul>
                   <li>Find expert editors</li>
                   <li>Get account management</li>
@@ -409,7 +409,7 @@ function SignupPage({ onSignup, onBack }) {
             {userType === 'creator' ? (
               <>
                 <div className="form-group">
-                  <label>Instagram Handle</label>
+                  <label>Camera Handle</label>
                   <input 
                     type="text" 
                     required 
@@ -627,7 +627,7 @@ function Dashboard({ user, profiles, connections, setConnections, messages, setM
       {/* Sidebar */}
       <aside className="sidebar">
         <div className="sidebar-header">
-          <Instagram size={32} />
+          <Camera size={32} />
           <span>CreatorLink</span>
         </div>
 
@@ -754,7 +754,7 @@ function Dashboard({ user, profiles, connections, setConnections, messages, setM
                     ) : (
                       <>
                         <div className="detail-item">
-                          <Instagram size={16} />
+                          <Camera size={16} />
                           <span>{profile.followers} followers</span>
                         </div>
                         <div className="detail-item">
